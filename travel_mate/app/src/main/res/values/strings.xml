@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">travel_mate</string>
+    <string name="email_id">Email id</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="login">Login</string>
+    <string name="name">Name</string>
+    <string name="signup">Signup</string>
+    <string name="text_login"><u>Already a member? Login</u></string>
+    <string name="text_signup_or"><u>Not registered yet? Create new account</u></string>
+    <string name="empty_description">No description available.</string>
 </resources>

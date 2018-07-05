@@ -32,4 +32,13 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    /// Butter Knife - Field and method binding for android views
+    // http://jakewharton.github.io/butterknife/
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+    // android process button
+    // https://github.com/dmytrodanylyk/android-process-button
+    implementation 'com.github.dmytrodanylyk.android-process-button:library:1.0.4'
 }
