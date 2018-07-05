@@ -11,6 +11,8 @@ import com.eftimoff.androipathview.PathView;
 
 import java.util.Objects;
 
+import io.github.jamelouis.travel_mate.login.LoginActivity;
+
 public class Splash extends AppCompatActivity {
 
     @Override
@@ -33,7 +35,7 @@ public class Splash extends AppCompatActivity {
         pathView.setFillAfter(true);
 
         new Handler().postDelayed(() -> {
-            Intent i = new Intent(Splash.this, MainActivity.class);
+            Intent i = new Intent(Splash.this, LoginActivity.class);
             startActivity(i);
             finish();
         }, 2000);
