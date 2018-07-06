@@ -9,4 +9,6 @@
     <string name="text_login"><u>Already a member? Login</u></string>
     <string name="text_signup_or"><u>Not registered yet? Create new account</u></string>
     <string name="empty_description">No description available.</string>
+    <string name="toast_invalid_username_or_passsword">Invalid Username or Password.</string>
+    <string name="progress_wait">Please wait...</string>
 </resources>
