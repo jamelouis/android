@@ -11,6 +11,8 @@
 
 # Login
 
+![Login][doc/img/login.png "Login"]
+
 * [Butter Knife](http://jakewharton.github.io/butterknife/) - Field and method binding for Android views
 * [android process button](https://github.com/dmytrodanylyk/android-process-button)
 * [Material Dialogs](https://github.com/afollestad/material-dialogs)
