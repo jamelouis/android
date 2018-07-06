@@ -2,13 +2,18 @@ package io.github.jamelouis.travel_mate.login;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
@@ -25,7 +30,9 @@ import io.github.jamelouis.travel_mate.MainActivity;
 import io.github.jamelouis.travel_mate.R;
 
 
-public class LoginActivity extends AppCompatActivity implements LoginView {
+public class LoginActivity extends AppCompatActivity implements LoginView, View.OnClickListener {
+
+    public static final String USER_TOKEN = "user_token";
 
     private final LoginPresenter mLoginPresenter = new LoginPresenter();
 
@@ -43,6 +50,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
     @BindView(R.id.ok_signup) FlatButton ok_signup;
 
     private MaterialDialog mDialog;
+    private SharedPreferences mSharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +71,14 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
         mLoginPresenter.bind(this);
         ButterKnife.bind(this);
 
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        getRunTimePermissions();
+        checkUserSession();
+
+        signup.setOnClickListener(this);
+        login.setOnClickListener(this);
+        ok_login.setOnClickListener(this);
+        ok_signup.setOnClickListener(this);
     }
 
     @Override
@@ -72,8 +88,43 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
     }
 
     @Override
-    public void rememberUserInfo(String token, String email) {
+    public void onClick(View view)
+    {
+        switch(view.getId()){
+            case R.id.signup:
+                signup.setVisibility(View.GONE);
+                login.setVisibility(View.VISIBLE);
+                mLoginPresenter.signUp();
+                break;
+            case R.id.login:
+                signup.setVisibility(View.VISIBLE);
+                login.setVisibility(View.GONE);
+                mLoginPresenter.login();
+                break;
+            case R.id.ok_login:
+                String emailString = email_login.getText().toString();
+                String passString = pass_login.getText().toString();
+                mLoginPresenter.ok_login(emailString,passString,null);
+                break;
+            case R.id.ok_signup:
+                emailString = email_signup.getText().toString();
+                passString = pass_signup.getText().toString();
+                String confirmPassString = confirm_pass_signup.getText().toString();
+                String nameString = name.getText().toString();
+                if(passString.equals(confirmPassString)) {
+                    mLoginPresenter.ok_signUp(nameString,emailString,passString,null);
+                }else{
+                    Toast.makeText(this,"Passwords do not match", Toast.LENGTH_LONG);
+                }
+                break;
+        }
+    }
 
+    @Override
+    public void rememberUserInfo(String token, String email) {
+        SharedPreferences.Editor editor = mSharedPreferences.edit();
+        editor.putString(USER_TOKEN,token);
+        editor.apply();
     }
 
     @Override
@@ -128,7 +179,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
 
     @Override
     public void checkUserSession() {
-        if(true){
+        if(mSharedPreferences.getString(USER_TOKEN, null)!=null){
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(intent);
             finish();
