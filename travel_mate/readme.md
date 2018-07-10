@@ -23,4 +23,5 @@
 
 # Emergency
 
+![Emergency](doc/img/emergency.gif "Emergency")
 * [RippleEffect](https://github.com/traex/RippleEffect)

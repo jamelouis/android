@@ -1,6 +1,8 @@
 package io.github.jamelouis.travel_mate.utilities;
 
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -13,7 +15,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.github.jamelouis.travel_mate.R;
 
-public class EmergencyFragment extends Fragment {
+public class EmergencyFragment extends Fragment implements View.OnClickListener {
 
     @BindView(R.id.police)    Button police;
     @BindView(R.id.fire) Button fire;
@@ -31,6 +33,39 @@ public class EmergencyFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_emergency, container, false);
 
         ButterKnife.bind(this,view);
+
+        police.setOnClickListener(this);
+        fire.setOnClickListener(this);
+        ambulance.setOnClickListener(this);
+        blood_bank.setOnClickListener(this);
+        bomb.setOnClickListener(this);
+        railways.setOnClickListener(this);
+        
         return view;
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent intent = new Intent(Intent.ACTION_DIAL);
+        switch (v.getId()) {
+            case R.id.police:
+                intent.setData(Uri.parse("tel:110"));
+                break;
+            case R.id.fire:
+                intent.setData(Uri.parse("tel:120"));
+                break;
+            case R.id.ambulance:
+                intent.setData(Uri.parse("tel:102"));
+                break;
+            case R.id.blood_bank:
+                intent.setData(Uri.parse("tel:25752924"));
+                break;
+            case R.id.bomb:
+                intent.setData(Uri.parse("tel:22512201"));
+                break;
+            case R.id.railways:
+                intent.setData(Uri.parse("tel:23366177"));
+        }
+        startActivity(intent);
     }
 }
