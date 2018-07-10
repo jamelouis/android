@@ -4,7 +4,7 @@ android {
     compileSdkVersion 27
     defaultConfig {
         applicationId "io.github.jamelouis.travel_mate"
-        minSdkVersion 16
+        minSdkVersion 17
         targetSdkVersion 27
         versionCode 5
         versionName "2.3"
@@ -45,4 +45,8 @@ dependencies {
     /// Material dialogs
     // https://github.com/afollestad/material-dialogs
     implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
+
+    /// RippleEffect
+    // https://github.com/traex/RippleEffect
+    implementation 'com.github.traex.rippleeffect:library:1.3'
 }

@@ -26,11 +26,11 @@
                     app:popupTheme="@style/AppTheme.PopupOverlay" />
 
             </android.support.design.widget.AppBarLayout>
-             <!--
+
                 <include
                     android:id="@+id/inc"
                     layout="@layout/content_travel" />
-                -->
+
             </android.support.design.widget.CoordinatorLayout>
 
 

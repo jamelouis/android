@@ -21,3 +21,6 @@
 
 ![Navigation](doc/img/navigation.gif "Navigation")
 
+# Emergency
+
+* [RippleEffect](https://github.com/traex/RippleEffect)

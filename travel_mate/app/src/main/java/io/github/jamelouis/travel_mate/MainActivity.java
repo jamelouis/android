@@ -18,6 +18,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import io.github.jamelouis.travel_mate.login.LoginActivity;
+import io.github.jamelouis.travel_mate.utilities.EmergencyFragment;
 
 import static io.github.jamelouis.travel_mate.utils.Constants.USER_TOKEN;
 
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
 
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this,
@@ -65,6 +66,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_utility:
                 break;
             case R.id.nav_emergency:
+                fragment = new EmergencyFragment();
+                fragmentManager.beginTransaction().replace(R.id.inc,fragment).commit();
                 break;
             case R.id.nav_signout:
                 ContextThemeWrapper crt = new ContextThemeWrapper(this, R.style.AlertDialog);

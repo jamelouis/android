@@ -26,4 +26,13 @@
     <string name="signout_message">Are you sure want to sign out?</string>
     <string name="positive_button">OK</string>
     <string name="negative_button">CANCEL</string>
+
+    <!-- Emergency contact strings -->
+    <string name="emergency_call">Call</string>
+    <string name="emergency_police">POLICE</string>
+    <string name="emergency_fire">FIRE</string>
+    <string name="emergency_ambulance">AMBULANCE</string>
+    <string name="emergency_blood_bank">Blood Bank Organisation</string>
+    <string name="emergency_bomb_disposal">Bomb Disposal Squad</string>
+    <string name="emergency_railways">Railways Enquiry</string>
 </resources>
