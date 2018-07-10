@@ -29,10 +29,12 @@ import butterknife.ButterKnife;
 import io.github.jamelouis.travel_mate.MainActivity;
 import io.github.jamelouis.travel_mate.R;
 
+import static io.github.jamelouis.travel_mate.utils.Constants.USER_TOKEN;
+
 
 public class LoginActivity extends AppCompatActivity implements LoginView, View.OnClickListener {
 
-    public static final String USER_TOKEN = "user_token";
+
 
     private final LoginPresenter mLoginPresenter = new LoginPresenter();
 

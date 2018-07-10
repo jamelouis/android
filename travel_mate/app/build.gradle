@@ -4,7 +4,7 @@ android {
     compileSdkVersion 27
     defaultConfig {
         applicationId "io.github.jamelouis.travel_mate"
-        minSdkVersion 23
+        minSdkVersion 16
         targetSdkVersion 27
         versionCode 5
         versionName "2.3"

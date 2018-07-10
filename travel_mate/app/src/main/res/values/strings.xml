@@ -23,6 +23,7 @@
     <string name="navigation_drawer_emergency_contact">Emergency Contacts</string>
     <string name="navigation_drawer_signout">Sign Out</string>
 
-
-
+    <string name="signout_message">Are you sure want to sign out?</string>
+    <string name="positive_button">OK</string>
+    <string name="negative_button">CANCEL</string>
 </resources>
