@@ -16,3 +16,8 @@
 * [Butter Knife](http://jakewharton.github.io/butterknife/) - Field and method binding for Android views
 * [android process button](https://github.com/dmytrodanylyk/android-process-button)
 * [Material Dialogs](https://github.com/afollestad/material-dialogs)
+
+# Navigation
+
+![Navigation](doc/img/navigation.gif "Navigation")
+

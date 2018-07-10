@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">travel_mate</string>
+    <string name="app_name">Travel Mate</string>
+    <string name="navigation_drawer_open">Travel Guide</string>
+    <string name="navigation_drawer_close">Travel Guide</string>
     <string name="email_id">Email id</string>
     <string name="password">Password</string>
     <string name="confirm_password">Confirm Password</string>
@@ -11,4 +13,16 @@
     <string name="empty_description">No description available.</string>
     <string name="toast_invalid_username_or_passsword">Invalid Username or Password.</string>
     <string name="progress_wait">Please wait...</string>
+    <string name="enter_task_name">Enter Task Name</string>
+
+    <!--Drawer String-->
+    <string name="navigation_drawer_destination">Destinations</string>
+    <string name="navigation_drawer_travel">Travel</string>
+    <string name="navigation_drawer_utilities">Utilities</string>
+    <string name="navigation_drawer_extras">Extras</string>
+    <string name="navigation_drawer_emergency_contact">Emergency Contacts</string>
+    <string name="navigation_drawer_signout">Sign Out</string>
+
+
+
 </resources>
