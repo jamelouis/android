@@ -13,7 +13,7 @@
     <string name="empty_description">No description available.</string>
     <string name="toast_invalid_username_or_passsword">Invalid Username or Password.</string>
     <string name="progress_wait">Please wait...</string>
-    <string name="enter_task_name">Enter Task Name</string>
+
 
     <!--Drawer String-->
     <string name="navigation_drawer_destination">Destinations</string>
@@ -35,4 +35,24 @@
     <string name="emergency_blood_bank">Blood Bank Organisation</string>
     <string name="emergency_bomb_disposal">Bomb Disposal Squad</string>
     <string name="emergency_railways">Railways Enquiry</string>
+
+    <!-- Share contact strings -->
+    <string name="share_contact_text">Share Contact</string>
+    <string name="share_contact">Share My Contact</string>
+    <string name="view_contact">View someone Contact</string>
+
+    <!-- Checklist strings -->
+    <string name="text_checklist">Checklist</string>
+    <string name="enter_task_name">Enter task name</string>
+
+    <!-- Activity Title strings -->
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_select_city">Select City</string>
+    <string name="title_activity_select__mode_of_transport">Select Mode of Transport</string>
+    <string name="title_activity_car_directions">Car Directions</string>
+    <string name="title_activity_shopping_currentcity">Shopping current city</string>
+    <string name="title_activity_train_list">TrainList</string>
+    <string name="title_activity_hotels">Hotels</string>
+    <string name="title_activity_map">MapActivity</string>
+    <string name="title_activity_fun_facts">FunFacts</string>
 </resources>

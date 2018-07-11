@@ -40,7 +40,7 @@ public class EmergencyFragment extends Fragment implements View.OnClickListener 
         blood_bank.setOnClickListener(this);
         bomb.setOnClickListener(this);
         railways.setOnClickListener(this);
-        
+
         return view;
     }
 

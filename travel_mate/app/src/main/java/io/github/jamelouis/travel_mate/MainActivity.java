@@ -19,6 +19,7 @@ import android.view.MenuItem;
 
 import io.github.jamelouis.travel_mate.login.LoginActivity;
 import io.github.jamelouis.travel_mate.utilities.EmergencyFragment;
+import io.github.jamelouis.travel_mate.utilities.UtilitiesFragment;
 
 import static io.github.jamelouis.travel_mate.utils.Constants.USER_TOKEN;
 
@@ -64,6 +65,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_city:
                 break;
             case R.id.nav_utility:
+                fragment = new UtilitiesFragment();
+                fragmentManager.beginTransaction().replace(R.id.inc,fragment).commit();
                 break;
             case R.id.nav_emergency:
                 fragment = new EmergencyFragment();

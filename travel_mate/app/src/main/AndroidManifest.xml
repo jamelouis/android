@@ -22,6 +22,9 @@
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".login.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".utilities.Checklist"
+            android:label="@string/title_activity_select_city"
+            android:theme="@style/AppTheme_picker" />
     </application>
 
 </manifest>
