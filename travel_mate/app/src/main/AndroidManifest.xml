@@ -25,6 +25,7 @@
         <activity android:name=".utilities.Checklist"
             android:label="@string/title_activity_select_city"
             android:theme="@style/AppTheme_picker" />
+        <activity android:name=".utilities.ShareContact" />
     </application>
 
 </manifest>

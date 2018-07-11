@@ -58,8 +58,8 @@ public class UtilitiesFragment extends Fragment implements CardViewOptionsAdapte
         Intent intent;
         switch (position) {
             case 0:
-                //intent = new Intent(mActivity, ShareContact.class);
-                //startActivity(intent);
+                intent = new Intent(mActivity, ShareContact.class);
+                startActivity(intent);
                 break;
             case 1:
                 //intent = new Intent(mActivity, Checklist.class);
