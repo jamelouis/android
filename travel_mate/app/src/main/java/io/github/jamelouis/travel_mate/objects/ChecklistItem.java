@@ -14,7 +14,7 @@ public class ChecklistItem {
         this.mName = name;
     }
 
-    public String getiq() {
+    public String getId() {
         return mId;
     }
 
