@@ -65,4 +65,12 @@
     <string name="passwords_check">Passwords do not match!</string>
     <string name="location_enabled">Location enabled</string>
     <string name="location_not_enabled">Location not enabled</string>
+
+    <!-- Sample Data -->
+    <string name="sample_state">Delhi</string>
+    <string name="sample_string">Also known as Bahai Temple, Lotus Temple is one of the finest crafted structures is in Delhi. Also known as Bahai Temple, Lotus Temple is one of the finest crafted structures is in Delhi
+    Also known as Bahai Temple, Lotus Temple is one of the finest crafted structures is in Delhi. Also known as Bahai Temple, Lotus Temple is one of the finest crafted structures is in Delhi
+    Also known as Bahai Temple, Lotus Temple is one of the finest crafted structures is in Delhi</string>
+
+
 </resources>
