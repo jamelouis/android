@@ -28,7 +28,7 @@ public class Checklist extends AppCompatActivity {
 
         Fragment fragment = null;
         FragmentManager fragmentManager = getSupportFragmentManager();
-       // fragment = new ChecklistFragment();
+        fragment = new ChecklistFragment();
         fragmentManager.beginTransaction().replace(R.id.inc,fragment).commit();
 
         setTitle("checklist");
