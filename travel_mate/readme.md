@@ -28,5 +28,8 @@
 
 # Utility
 
+![Checked](doc/img/checklist_done.gif "Checked")
+![New Task](doc/img/checklist_new_task.gif "New Task")
+
 * [QR Droid](http://qrdroid.com/android-developers/)
 * [material - checkbox](https://github.com/rey5137/material)

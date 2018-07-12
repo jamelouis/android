@@ -3,6 +3,7 @@ package io.github.jamelouis.travel_mate.utilities;
 
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
@@ -19,6 +20,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import com.rey.material.widget.CheckBox;
@@ -28,6 +30,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import io.github.jamelouis.travel_mate.R;
 import io.github.jamelouis.travel_mate.objects.ChecklistEntry;
 import io.github.jamelouis.travel_mate.objects.ChecklistItem;
@@ -66,6 +69,28 @@ public class ChecklistFragment extends Fragment {
 
 
         return view;
+    }
+
+    @OnClick(R.id.add)
+    void onClick() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(mActivity);
+        LayoutInflater inflater = (mActivity).getLayoutInflater();
+        builder.setTitle("Add new item");
+        builder.setCancelable(false);
+        final View dialogv = inflater.inflate(R.layout.dialog, null, false);
+        builder.setView(dialogv)
+                .setPositiveButton("OK", ((dialog, which) -> {
+                    EditText e1 = dialogv.findViewById(R.id.task);
+                    if(!e1.getText().toString().equals("")){
+                        ContentValues insertValues = new ContentValues();
+                        insertValues.put(ChecklistEntry.COLUMN_NAME, e1.getText().toString());
+                        insertValues.put(ChecklistEntry.COLUMN_NAME_ISDONE, "0");
+                        mDatabase.insert(ChecklistEntry.TABLE_NAME, null, insertValues);
+                        ChecklistFragment.this.refresh();
+                    }
+                }));
+        builder.create();
+        builder.show();
     }
 
     private void addDefaultItems() {
