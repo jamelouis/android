@@ -1,4 +1,8 @@
 
+# 复现开源软件[Travel Mate](https://github.com/project-travel-mate/Travel-Mate)
+
+1. Travel Mate跑起来
+2. 一点一点的实现Travel Mate里的功能
 
 # Splash Screen
 
