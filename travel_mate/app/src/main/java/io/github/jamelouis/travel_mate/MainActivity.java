@@ -18,6 +18,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import io.github.jamelouis.travel_mate.login.LoginActivity;
+import io.github.jamelouis.travel_mate.travel.TravelFragment;
 import io.github.jamelouis.travel_mate.utilities.EmergencyFragment;
 import io.github.jamelouis.travel_mate.utilities.UtilitiesFragment;
 
@@ -61,6 +62,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         switch (id) {
             case R.id.nav_travel:
+                fragment = new TravelFragment();
+                fragmentManager.beginTransaction().replace(R.id.inc, fragment).commit();
                 break;
             case R.id.nav_city:
                 break;

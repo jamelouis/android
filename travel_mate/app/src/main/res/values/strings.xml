@@ -72,5 +72,36 @@
     Also known as Bahai Temple, Lotus Temple is one of the finest crafted structures is in Delhi. Also known as Bahai Temple, Lotus Temple is one of the finest crafted structures is in Delhi
     Also known as Bahai Temple, Lotus Temple is one of the finest crafted structures is in Delhi</string>
 
+    <!-- Travel home page strings -->
+    <string name="transport">TRANSPORT</string>
+    <string name="hotel">HOTEL BOOKING</string>
+    <string name="online_Shopping">ONLINE SHOPPING</string>
+    <string name="real_time_locator">REAL TIME LOCATOR</string>
+    <string name="my_trips">MY TRIPS</string>
+    <string name="fun_facts">Fun Facts</string>
 
+    <!-- Constant texts -->
+    <string name="text_to">TO</string>
+    <string name="text_change">Change</string>
+    <string name="text_mileage">Mileage</string>
+    <string name="text_travel_cost">Travel Cost </string>
+    <string name="text_toll">Toll </string>
+    <string name="text_hangout">Hangout</string>
+    <string name="text_monuments">Monuments</string>
+    <string name="text_shopping">Shopping</string>
+    <string name="text_restaurants">Restaurants</string>
+    <string name="text_city_trends">City Trends</string>
+    <string name="text_cart">Car</string>
+    <string name="text_train">Train</string>
+    <string name="text_max">max</string>
+    <string name="text_min">min</string>
+    <string name="text_go">Go</string>
+    <string name="text_locate">Locate</string>
+    <string name="text_more">More</string>
+    <string name="text_title">Title</string>
+    <string name="text_call">Call</string>
+    <string name="text_book">Book</string>
+    <string name="text_share_screenshot">Share screenshot</string>
+    <string name="text_my_trips">My Trips</string>
+    <string name="unknown_value">…</string>
 </resources>
