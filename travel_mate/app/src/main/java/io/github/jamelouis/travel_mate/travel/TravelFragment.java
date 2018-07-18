@@ -65,6 +65,10 @@ public class TravelFragment extends Fragment implements CardViewOptionsAdapter.O
                 i = new Intent(mActivity, SelectModeOfTransport.class);
                 startActivity(i);
                 break;
+            case 2:
+                i = new Intent(mActivity,Hotels.class);
+                startActivity(i);
+                break;
         }
     }
 

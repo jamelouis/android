@@ -12,7 +12,7 @@
     <string name="text_signup_or"><u>Not registered yet? Create new account</u></string>
     <string name="empty_description">No description available.</string>
     <string name="toast_invalid_username_or_passsword">Invalid Username or Password.</string>
-    <string name="progress_wait">Please wait...</string>
+
 
 
     <!--Drawer String-->
@@ -104,4 +104,22 @@
     <string name="text_share_screenshot">Share screenshot</string>
     <string name="text_my_trips">My Trips</string>
     <string name="unknown_value">…</string>
+
+    <!-- My Trip Strings -->
+    <string name="prompt_trip_name">Enter trip Name</string>
+    <string name="prompt_city_name">Enter city name</string>
+    <string name="prompt_start_date">Enter start date</string>
+    <string name="prompt_end_date">Enter end date</string>
+    <string name="prompt_add_trip">Add trip</string>
+    <string name="prompt_friend_name">Enter friend name</string>
+    <string name="prompt_add_friend">Add New friend</string>
+    <string name="photos_of_trip">Photos of this trip : </string>
+    <string name="friends_of_trip">Friends in this trip </string>
+    <string name="text_started_on">Started on :  </string>
+    <string name="prompt_add_new_trip">Add New Trip</string>
+    <string name="progress_fetching_trip">Fetching trips…</string>
+    <string name="progress_wait">Please wait…</string>
+    <string name="trip_added">Trip added</string>
+    <string name="friend_added">Friend added to trip</string>
+    <string name="no_friend_selected">Please select a valid friend to add</string>
 </resources>

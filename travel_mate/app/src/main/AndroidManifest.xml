@@ -30,6 +30,9 @@
             android:theme="@style/AppTheme_picker" />
 
         <activity android:name=".utilities.ShareContact" />
+        <activity android:name=".travel.Hotels"
+            android:label="@string/title_activity_hotels"
+            android:theme="@style/AppTheme_picker" />
     </application>
 
 </manifest>
