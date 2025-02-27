@@ -33,13 +33,13 @@ jobs:
         run: ./gradlew assembleRelease
       
       - name: Upload debug APK for app1
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: app1-debug
           path: app1/build/outputs/apk/debug/app-debug.apk
       
       - name: Upload release APK for app1
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: app1-release-unsigned
           path: app1/build/outputs/apk/release/app-release-unsigned.apk
@@ -69,13 +69,13 @@ jobs:
         run: ./gradlew assembleRelease
       
       - name: Upload debug APK for app2
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: app2-debug
           path: app2/build/outputs/apk/debug/app-debug.apk
       
       - name: Upload release APK for app2
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: app2-release-unsigned
           path: app2/build/outputs/apk/release/app-release-unsigned.apk
