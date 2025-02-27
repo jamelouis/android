@@ -8,43 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-adb_demo:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./adb_demo
-    steps:
-      - uses: actions/checkout@v3
-      
-      - name: Set up JDK 8
-        uses: actions/setup-java@v3
-        with:
-          java-version: '8'
-          distribution: 'temurin'
-          cache: gradle
-      
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
-      
-      - name: Build debug APK for adb_demo
-        run: ./gradlew assembleDebug
-      
-      - name: Build release APK for adb_demo
-        run: ./gradlew assembleRelease
-      
-      - name: Upload debug APK for adb_demo
-        uses: actions/upload-artifact@v4
-        with:
-          name: adb_demo-debug
-          path: adb_demo/build/outputs/apk/debug/app-debug.apk
-      
-      - name: Upload release APK for adb_demo
-        uses: actions/upload-artifact@v4
-        with:
-          name: adb_demo-release-unsigned
-          path: adb_demo/build/outputs/apk/release/app-release-unsigned.apk
-
-  build-travel_mate:
+  build-app1:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -68,14 +32,62 @@ jobs:
       - name: Build release APK for travel_mate
         run: ./gradlew assembleRelease
       
+      - name: Locate APKs
+        id: locate-apks
+        run: |
+          echo "DEBUG_APK=$(find . -name "*debug*.apk" | head -n 1)" >> $GITHUB_OUTPUT
+          echo "RELEASE_APK=$(find . -name "*release*.apk" | head -n 1)" >> $GITHUB_OUTPUT
+      
       - name: Upload debug APK for travel_mate
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
           name: travel_mate-debug
-          path: travel_mate/build/outputs/apk/debug/app-debug.apk
+          path: ${{ steps.locate-apks.outputs.DEBUG_APK }}
       
       - name: Upload release APK for travel_mate
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
-          name: travel_mate-release-unsigned
-          path: travel_mate/build/outputs/apk/release/app-release-unsigned.apk
+          name: travel_mate-release
+          path: ${{ steps.locate-apks.outputs.RELEASE_APK }}
+
+  build-app2:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./app2
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Set up JDK 8
+        uses: actions/setup-java@v3
+        with:
+          java-version: '8'
+          distribution: 'temurin'
+          cache: gradle
+      
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+      
+      - name: Build debug APK for app2
+        run: ./gradlew assembleDebug
+      
+      - name: Build release APK for app2
+        run: ./gradlew assembleRelease
+      
+      - name: Locate APKs
+        id: locate-apks
+        run: |
+          echo "DEBUG_APK=$(find . -name "*debug*.apk" | head -n 1)" >> $GITHUB_OUTPUT
+          echo "RELEASE_APK=$(find . -name "*release*.apk" | head -n 1)" >> $GITHUB_OUTPUT
+      
+      - name: Upload debug APK for app2
+        uses: actions/upload-artifact@v3
+        with:
+          name: app2-debug
+          path: ${{ steps.locate-apks.outputs.DEBUG_APK }}
+      
+      - name: Upload release APK for app2
+        uses: actions/upload-artifact@v3
+        with:
+          name: app2-release
+          path: ${{ steps.locate-apks.outputs.RELEASE_APK }}
