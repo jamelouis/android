@@ -39,13 +39,13 @@ jobs:
           echo "RELEASE_APK=$(find . -name "*release*.apk" | head -n 1)" >> $GITHUB_OUTPUT
       
       - name: Upload debug APK for travel_mate
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: travel_mate-debug
           path: ${{ steps.locate-apks.outputs.DEBUG_APK }}
       
       - name: Upload release APK for travel_mate
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: travel_mate-release
           path: ${{ steps.locate-apks.outputs.RELEASE_APK }}
@@ -81,13 +81,13 @@ jobs:
           echo "RELEASE_APK=$(find . -name "*release*.apk" | head -n 1)" >> $GITHUB_OUTPUT
       
       - name: Upload debug APK for app2
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: app2-debug
           path: ${{ steps.locate-apks.outputs.DEBUG_APK }}
       
       - name: Upload release APK for app2
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: app2-release
           path: ${{ steps.locate-apks.outputs.RELEASE_APK }}
