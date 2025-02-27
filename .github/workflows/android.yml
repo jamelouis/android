@@ -21,9 +21,11 @@ jobs:
         cache: gradle
 
     - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
+      run: chmod +x travel_mate/gradlew
     - name: Build with Gradle for travel mate
       run: ./travel_mate/gradlew build
-
+      
+    - name: Grant execute permission for gradlew
+      run: chmod +x adb_demo/gradlew
     - name: Build with Gradle for travel mate
       run: ./adb_demo/gradlew build
