@@ -32,23 +32,19 @@ jobs:
       - name: Build release APK for travel_mate
         run: ./gradlew assembleRelease
       
-      - name: Locate APKs
-        id: locate-apks
+      - name: Find and display APK paths
         run: |
-          echo "DEBUG_APK=$(find . -name "*debug*.apk" | head -n 1)" >> $GITHUB_OUTPUT
-          echo "RELEASE_APK=$(find . -name "*release*.apk" | head -n 1)" >> $GITHUB_OUTPUT
+          echo "Searching for APK files..."
+          find . -type f -name "*.apk" | sort
       
-      - name: Upload debug APK for travel_mate
+      - name: Upload all APKs for travel_mate
         uses: actions/upload-artifact@v4
         with:
-          name: travel_mate-debug
-          path: ${{ steps.locate-apks.outputs.DEBUG_APK }}
-      
-      - name: Upload release APK for travel_mate
-        uses: actions/upload-artifact@v4
-        with:
-          name: travel_mate-release
-          path: ${{ steps.locate-apks.outputs.RELEASE_APK }}
+          name: travel_mate-apks
+          path: |
+            ./app/**/*.apk
+            ./build/**/*.apk
+            ./**/*.apk
 
   build-app2:
     runs-on: ubuntu-latest
