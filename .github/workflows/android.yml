@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-app1:
+  build-adb_demo:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -26,25 +26,25 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       
-      - name: Build debug APK for app1
+      - name: Build debug APK for adb_demo
         run: ./gradlew assembleDebug
       
-      - name: Build release APK for app1
+      - name: Build release APK for adb_demo
         run: ./gradlew assembleRelease
       
-      - name: Upload debug APK for app1
+      - name: Upload debug APK for adb_demo
         uses: actions/upload-artifact@v4
         with:
-          name: app1-debug
-          path: app1/build/outputs/apk/debug/app-debug.apk
+          name: adb_demo-debug
+          path: adb_demo/build/outputs/apk/debug/app-debug.apk
       
-      - name: Upload release APK for app1
+      - name: Upload release APK for adb_demo
         uses: actions/upload-artifact@v4
         with:
-          name: app1-release-unsigned
-          path: app1/build/outputs/apk/release/app-release-unsigned.apk
+          name: adb_demo-release-unsigned
+          path: adb_demo/build/outputs/apk/release/app-release-unsigned.apk
 
-  build-app2:
+  build-travel_mate:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -62,20 +62,20 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       
-      - name: Build debug APK for app2
+      - name: Build debug APK for travel_mate
         run: ./gradlew assembleDebug
       
-      - name: Build release APK for app2
+      - name: Build release APK for travel_mate
         run: ./gradlew assembleRelease
       
-      - name: Upload debug APK for app2
+      - name: Upload debug APK for travel_mate
         uses: actions/upload-artifact@v4
         with:
-          name: app2-debug
-          path: app2/build/outputs/apk/debug/app-debug.apk
+          name: travel_mate-debug
+          path: travel_mate/build/outputs/apk/debug/app-debug.apk
       
-      - name: Upload release APK for app2
+      - name: Upload release APK for travel_mate
         uses: actions/upload-artifact@v4
         with:
-          name: app2-release-unsigned
-          path: app2/build/outputs/apk/release/app-release-unsigned.apk
+          name: travel_mate-release-unsigned
+          path: travel_mate/build/outputs/apk/release/app-release-unsigned.apk
