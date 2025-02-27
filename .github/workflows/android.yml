@@ -1,31 +1,81 @@
-name: Android CI
+name: Android Build
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ main, develop ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ main, develop ]
+  workflow_dispatch:
 
 jobs:
-  build:
-
+  build-app1:
     runs-on: ubuntu-latest
-
+    defaults:
+      run:
+        working-directory: ./adb_demo
     steps:
-    - uses: actions/checkout@v4
-    - name: set up JDK 11
-      uses: actions/setup-java@v4
-      with:
-        java-version: '8'
-        distribution: 'temurin'
-        cache: gradle
-
-    - name: Grant execute permission for gradlew
-      run: chmod +x travel_mate/gradlew
-    - name: Build with Gradle for travel mate
-      run: ./travel_mate/gradlew build
+      - uses: actions/checkout@v3
       
-    - name: Grant execute permission for gradlew
-      run: chmod +x adb_demo/gradlew
-    - name: Build with Gradle for travel mate
-      run: ./adb_demo/gradlew build
+      - name: Set up JDK 8
+        uses: actions/setup-java@v3
+        with:
+          java-version: '8'
+          distribution: 'temurin'
+          cache: gradle
+      
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+      
+      - name: Build debug APK for app1
+        run: ./gradlew assembleDebug
+      
+      - name: Build release APK for app1
+        run: ./gradlew assembleRelease
+      
+      - name: Upload debug APK for app1
+        uses: actions/upload-artifact@v3
+        with:
+          name: app1-debug
+          path: app1/build/outputs/apk/debug/app-debug.apk
+      
+      - name: Upload release APK for app1
+        uses: actions/upload-artifact@v3
+        with:
+          name: app1-release-unsigned
+          path: app1/build/outputs/apk/release/app-release-unsigned.apk
+
+  build-app2:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./travel_mate
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Set up JDK 8
+        uses: actions/setup-java@v3
+        with:
+          java-version: '8'
+          distribution: 'temurin'
+          cache: gradle
+      
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+      
+      - name: Build debug APK for app2
+        run: ./gradlew assembleDebug
+      
+      - name: Build release APK for app2
+        run: ./gradlew assembleRelease
+      
+      - name: Upload debug APK for app2
+        uses: actions/upload-artifact@v3
+        with:
+          name: app2-debug
+          path: app2/build/outputs/apk/debug/app-debug.apk
+      
+      - name: Upload release APK for app2
+        uses: actions/upload-artifact@v3
+        with:
+          name: app2-release-unsigned
+          path: app2/build/outputs/apk/release/app-release-unsigned.apk
